@@ -55,5 +55,32 @@ export default StyleSheet.create({
   },
   textChildren: {
     color: "pink"
+  },
+  textInput: {
+    alignItems: "center",
+    borderColor: "gray",
+    borderWidth: 1,
+    margin: 20,
+    height: 40,
+    padding: 10
+  },
+  multilineTextInput: {
+    height: 100,
+    margin: 20,
+    padding: 10,
+    borderColor: "gray",
+    borderWidth: 1
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  button: {
+    fontSize: 25,
+    color: "white",
+    backgroundColor: "green",
+    padding: 15,
+    borderRadius: 20
   }
 });

@@ -10,6 +10,11 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 import styles from "./src/common/styles/styles";
 import Bananas from "./src/components/Banana";
 import LotsOfGreetings from "./src/components/Greeting";
+import FlexboxComponent from "./src/components/FlexboxComponent";
+import TextInputComponent from "./src/components/TextInputComponent";
+import TextComponent from "./src/components/TextComponent";
+import TouchesGestures from "./src/components/TouchesGestures";
+import Touchable from "./src/components/Touchable";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -25,14 +30,12 @@ export default class App extends Component<Props> {
     this.state = {
       isActive: false
     };
-    setInterval(() => (
-      this.setState(previousState => (
-        { isActive: !previousState.isActive }
-      ))
-    ), 1000);
+    setInterval(
+      () =>
+        this.setState(previousState => ({ isActive: !previousState.isActive })),
+      1000
+    );
   }
-
-  
 
   render() {
     const { isActive } = this.state;
@@ -55,8 +58,6 @@ export default class App extends Component<Props> {
       //       isActive ? styles.backgroundRed : styles.backgroundGreen
       //     ]}
       //   />
-      //   <Bananas />
-      //   <LotsOfGreetings />
       //   <View style={styles.flexContainer}>
       //     <View style={[styles.smallBox, { backgroundColor: "red" }]} />
       //     <View style={[styles.smallBox, { backgroundColor: "green" }]} />
@@ -64,43 +65,13 @@ export default class App extends Component<Props> {
       //   </View>
       // </View>
 
-      // <View style={[
-      //   styles.flexbox,
-      //   {flexDirection: "column", height:"100%"}
-      // ]}>
-      //   <View style={[
-      //     styles.defaultBorder, { flexGrow: 2 , flexDirection: "row"}, styles.flexbox
-      //     ]}>
-      //     <View style={[
-      //       styles.flexbox,
-      //       { flexGrow: 1, flexDirection: "column"}
-      //       ]}>
-      //       <View style={[styles.defaultBorder, { flexGrow: 1}]}/>
-      //       <View style={[styles.defaultBorder, { flexGrow: 3}]}/>
-      //     </View>
-      //     <View style={[styles.defaultBorder, {flexGrow: 3}, styles.backgroundRed]}/>
-      //   </View>
-
-      //   <View style={[styles.defaultBorder, { flexGrow: 1, flexDirection: "row" }]}>
-      //     <View style={[styles.defaultBorder, styles.backgroundBlue, { flexGrow: 1}]}/>
-      //     <View style={[styles.defaultBorder, { flexGrow: 2}]}/>
-      //     <View style={[styles.defaultBorder, { flexGrow: 1, flexDirection: "column"}]}>
-      //       <View style={[styles.defaultBorder, { flexGrow: 1}]}/>
-      //       <View style={[styles.defaultBorder, styles.backgroundYellow, { flexGrow: 1}]}/>
-      //     </View>
-      //   </View>
-      // </View>
-
-      <View>
-        <Text style={styles.textContainer}>
-          <Text style={styles.textWrapper}>
-            Tiêu Đề:
-            <Text style={styles.textChildren}>
-              Khóa học lập trình react native {this.state.isActive}
-            </Text>
-          </Text>
-        </Text>
-      </View>
+      // <Bananas />
+      // <LotsOfGreetings />
+      // <FlexboxComponent />
+      // <TextComponent />
+      // <TextInputComponent />
+      // <TouchesGestures />
+      <Touchable />
     );
   }
 }
